@@ -1,17 +1,19 @@
 package browseProducts;
 
+import java.util.ArrayList;
+
 public class UserInteractionHandler {
     DatabaseHandler database
 
-    public Product[] browseProducts(){ //user selects browse products, userInteractionHandler calls database and retrieves all products. (all products in current scope).
-        Product[] productCatalogue; //list of products created to store all products retrieved.
+    public ArrayList<Product> browseProducts(){ //user selects browse products, userInteractionHandler calls database and retrieves all products. (all products in current scope).
+        ArrayList<Product> productCatalogue; //list of products created to store all products retrieved.
         productCatalogue = database.getAllProducts(); //calls "getAllProducts" which will retrieve all products (in current scope).
 
         return productCatalogue; //returns list of products retrieved.
     }
 
-    public Product[] searchProducts(String[] searchTerms){ //user searches for products via search terms.
-        Product[] filterProductCatalogue; //list of products created to store and return all products retrieved.
+    public ArrayList<Product> searchProducts(String[] searchTerms){ //user searches for products via search terms.
+        ArrayList<Product> filterProductCatalogue; //list of products created to store and return all products retrieved.
         filterProductCatalogue = database.getFilterProducts(); //calls "getFilterProducts" which will retrieve all products that contain search terms.
 
         return filterProductCatalogue; //returns list of filtered products.
